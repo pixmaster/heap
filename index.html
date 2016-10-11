@@ -5,17 +5,26 @@
  </head>
  <body>
   <riotTest></riotTest>
-  <script src="https://rawgit.com/pixmaster/heap/master/riotTest.tag" type="riot/tag"></script>
-  <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+  <!--script src="//rawgit.com/pixmaster/heap/master/riotTest.tag" type="riot/tag"></script-->
+  <!--script src="//rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script-->
+
+  <script src="//cdn.jsdelivr.net/riot/2.6/riot.js"></script>
+  <script src="//rawgit.com/pixmaster/heap/master/riotTest.js"></script>
+
   <script>
 
    riot.route('*', function() {
      riot.mount('riotTest', {start: start});
    });
 
-   riot.compile(function() {
+   if (riot.compile) {
+     riot.compile(function() {
+       riot.route('/show');
+     });
+   }
+   else {
      riot.route('/show');
-   });
+   }
 
  </script>
 
