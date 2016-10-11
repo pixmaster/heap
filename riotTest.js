@@ -1,4 +1,6 @@
-riot.tag2('riottest', 'RiotJS load test: {time} ms <script>', '', '', function(opts) {
+riot.tag2('riottest', '', '', '', function(opts) {
   this.time = (new Date) - start;
+
+RiotJS load test: {time} ms
 
 });
