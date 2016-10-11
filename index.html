@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
  <head>
-<script>var start = new Date;</script>
-<script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
-</head>
+  <script>var start = new Date;</script>
+ </head>
  <body>
- <riotTest></riotTest>
- <script src="https://github.com/pixmaster/heap/raw/master/riotTest.tag" type="riot/tag"></script>
- <script>
+  <riotTest></riotTest>
+  <script src="https://rawgit.com/pixmaster/heap/master/riotTest.tag" type="riot/tag"></script>
+  <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+  <script>
 
-  riot.route('/*', function(name) {
-    console.log(3, name);
-    riot.mount('riotTest', {start: start});
-  });
+   riot.route('*', function() {
+     riot.mount('riotTest', {start: start});
+   });
+
+   riot.compile(function() {
+     riot.route('/show');
+   });
 
  </script>
 
